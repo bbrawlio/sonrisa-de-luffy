@@ -55,7 +55,32 @@ Después de conectar el dominio, actualiza las URLs de la tabla de arriba.
 
 ## El formulario
 
-El formulario no envía nada a un servidor: valida los campos, muestra un resumen
-y arma un mensaje de WhatsApp prellenado que el paciente confirma. Si más adelante
-quieres que las solicitudes queden registradas, el punto de conexión es el manejador
-`submit` al final de `index.html`.
+El formulario envía la solicitud a `api/agendar.js`, una función serverless que la
+reexpide por correo con [Resend](https://resend.com). El cuadro de confirmación solo
+aparece si la función responde `200`; si algo falla, el paciente ve un aviso con un
+enlace de WhatsApp de respaldo y sus datos no se pierden de vista.
+
+El botón "Confirmar por WhatsApp" del cuadro final sigue existiendo como canal rápido,
+pero ya no es el único registro de la solicitud.
+
+### Variables de entorno
+
+Configúralas en Vercel → Settings → Environment Variables. Sin ellas la función
+responde `500` y el formulario muestra el aviso de error.
+
+| Variable | Obligatoria | Qué es |
+|---|---|---|
+| `RESEND_API_KEY` | sí | Clave de [resend.com/api-keys](https://resend.com/api-keys) |
+| `AGENDA_TO` | sí | Correo donde la clínica recibe las solicitudes |
+| `AGENDA_FROM` | no | Remitente verificado. Por defecto `onboarding@resend.dev`, que solo puede enviar al correo dueño de la cuenta de Resend |
+
+Para enviar desde tu propio dominio hay que verificarlo en Resend (registros DNS) y
+luego poner `AGENDA_FROM` como `Sonrisa de Luffy <hola@tudominio.cl>`.
+
+### Protecciones
+
+- Campo trampa (`empresa`): invisible para las personas; si llega con contenido, la
+  función responde `200` y descarta el envío sin enviar correo.
+- Validación en el servidor además de la del navegador: nombre, teléfono de 8 dígitos
+  mínimo y fecha. Los campos se recortan a un largo máximo.
+- La API key vive solo en el servidor; nunca se expone al navegador.

@@ -229,6 +229,15 @@
   input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--danger)}
   .form-foot{display:flex;flex-direction:column;gap:10px}
   .form-foot .fine{font-size:.79rem;color:var(--muted)}
+  .form-error{
+    font-size:.88rem;color:var(--danger);border:1px solid var(--danger);
+    border-radius:10px;padding:11px 13px;line-height:1.45;
+  }
+  .form-error a{font-weight:600}
+  .btn[aria-busy="true"]{opacity:.65;cursor:progress}
+  /* Campo trampa para bots: fuera de la pantalla, sin ocultarlo con display
+     ni visibility, que es justo lo que un bot revisa para saltarselo. */
+  .hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 
   .done{
     background:var(--surface);border:1px solid var(--accent);border-radius:18px;
@@ -461,7 +470,13 @@
           Es mi primera visita a la clínica
         </label>
 
+        <div class="hp" aria-hidden="true">
+          <label for="empresa">No completes este campo</label>
+          <input type="text" id="empresa" name="empresa" tabindex="-1" autocomplete="off">
+        </div>
+
         <div class="form-foot">
+          <p class="form-error" id="form-error" hidden role="alert"></p>
           <button class="btn btn-primary" type="submit" id="submit-btn">Solicitar hora</button>
           <p class="fine">Al enviar aceptas que te contactemos por teléfono o WhatsApp para confirmar la hora.</p>
         </div>
@@ -513,6 +528,8 @@
   var WHATSAPP = "56912345678";
   var form = document.getElementById("booking-form");
   var done = document.getElementById("done");
+  var submitBtn = document.getElementById("submit-btn");
+  var formError = document.getElementById("form-error");
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
@@ -543,8 +560,21 @@
     }
   }
 
-  form.addEventListener("submit", function(ev){
+  function mostrarFalloDeEnvio(waHref){
+    formError.textContent = "No pudimos enviar tu solicitud. Revisa tu conexión e inténtalo otra vez, o escríbenos directo por WhatsApp: ";
+    var a = document.createElement("a");
+    a.href = waHref;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = "abrir WhatsApp con tus datos";
+    formError.appendChild(a);
+    formError.hidden = false;
+    formError.scrollIntoView({ block: "nearest" });
+  }
+
+  form.addEventListener("submit", async function(ev){
     ev.preventDefault();
+    formError.hidden = true;
 
     var nombre = document.getElementById("nombre").value.trim();
     var telefono = document.getElementById("telefono").value.trim();
@@ -576,6 +606,49 @@
     if (email) rows.push(["Correo", email]);
     if (primera) rows.push(["Primera visita", "Sí"]);
 
+    var lines = rows.map(function(r){ return r[0] + ": " + r[1]; }).join("\n");
+    var waHref = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(
+      "Hola, quiero agendar una hora en Sonrisa de Luffy.\n" + lines +
+      (mensaje ? "\nComentario: " + mensaje : "")
+    );
+
+    // El cuadro de confirmacion solo aparece si el servidor acepto la solicitud.
+    var etiquetaBoton = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.setAttribute("aria-busy", "true");
+    submitBtn.textContent = "Enviando…";
+
+    var aceptada = false;
+    try {
+      var respuesta = await fetch("/api/agendar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre: nombre,
+          telefono: telefono,
+          email: email,
+          motivo: motivo,
+          fecha: fechaVal,
+          bloque: bloque,
+          mensaje: mensaje,
+          primera: primera,
+          empresa: document.getElementById("empresa").value
+        })
+      });
+      aceptada = respuesta.ok;
+    } catch (e) {
+      aceptada = false;
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.removeAttribute("aria-busy");
+    submitBtn.textContent = etiquetaBoton;
+
+    if (!aceptada) {
+      mostrarFalloDeEnvio(waHref);
+      return;
+    }
+
     var list = document.getElementById("done-summary");
     list.textContent = "";
     rows.forEach(function(r){
@@ -592,12 +665,7 @@
     });
 
     document.getElementById("done-name").textContent = nombre.split(" ")[0];
-
-    var lines = rows.map(function(r){ return r[0] + ": " + r[1]; }).join("\n");
-    var text = "Hola, quiero agendar una hora en Sonrisa de Luffy.\n" + lines +
-      (mensaje ? "\nComentario: " + mensaje : "");
-    document.getElementById("wa-link").href =
-      "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
+    document.getElementById("wa-link").href = waHref;
 
     form.hidden = true;
     done.hidden = false;
@@ -610,6 +678,7 @@
     setError("nombre", "");
     setError("telefono", "");
     setError("fecha", "");
+    formError.hidden = true;
     done.hidden = true;
     form.hidden = false;
     document.getElementById("nombre").focus();
