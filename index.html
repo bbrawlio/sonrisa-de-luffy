@@ -75,6 +75,10 @@
   }
 
   *{box-sizing:border-box}
+  /* Las reglas de display de abajo (.done, form.card) son de autor y ganarian
+     sobre el [hidden]{display:none} del navegador: sin esto, los elementos
+     marcados con el atributo hidden se verian igual. */
+  [hidden]{display:none !important}
   body{
     margin:0;
     background:var(--ground);
