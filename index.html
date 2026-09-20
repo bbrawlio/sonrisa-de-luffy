@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sonrisa de Luffy · Clínica dental en Providencia</title>
+<meta name="description" content="Clínica dental en Providencia, Santiago. Agenda una evaluación de 30 minutos sin costo: limpieza, restauraciones, endodoncia, ortodoncia, estética y urgencias el mismo día.">
+<meta name="theme-color" content="#EDF1EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1413" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://sonrisadeluffy.cl/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Sonrisa de Luffy">
+<meta property="og:title" content="Sonrisa de Luffy · Clínica dental en Providencia">
+<meta property="og:description" content="Agenda una evaluación de 30 minutos sin costo. Te explicamos qué necesitas y te damos el presupuesto por escrito el mismo día.">
+<meta property="og:url" content="https://sonrisadeluffy.cl/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;600;700&family=Karla:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --ground:#EDF1EF;
+    --surface:#FFFFFF;
+    --surface-2:#F6F8F7;
+    --ink:#16211F;
+    --ink-soft:#3B4B47;
+    --muted:#5E6F6A;
+    --line:#D3DDD9;
+    --line-soft:#E2E9E6;
+    --accent:#0E6B5B;
+    --accent-hover:#0B5A4C;
+    --accent-tint:#DCEAE5;
+    --on-accent:#FFFFFF;
+    --danger:#B3261E;
+    --shadow:0 1px 2px rgba(22,33,31,.05), 0 12px 32px -18px rgba(22,33,31,.35);
+    --focus:#0E6B5B;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0D1413;
+      --surface:#151E1C;
+      --surface-2:#111A18;
+      --ink:#E7EFEC;
+      --ink-soft:#C3D2CD;
+      --muted:#93A5A0;
+      --line:#273632;
+      --line-soft:#1E2B28;
+      --accent:#57BCA3;
+      --accent-hover:#74CDB6;
+      --accent-tint:#173029;
+      --on-accent:#08201B;
+      --danger:#F2A9A1;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 40px -20px rgba(0,0,0,.8);
+      --focus:#57BCA3;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0D1413;
+    --surface:#151E1C;
+    --surface-2:#111A18;
+    --ink:#E7EFEC;
+    --ink-soft:#C3D2CD;
+    --muted:#93A5A0;
+    --line:#273632;
+    --line-soft:#1E2B28;
+    --accent:#57BCA3;
+    --accent-hover:#74CDB6;
+    --accent-tint:#173029;
+    --on-accent:#08201B;
+    --danger:#F2A9A1;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 40px -20px rgba(0,0,0,.8);
+    --focus:#57BCA3;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Karla","Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.wordmark,.step-num{font-family:"Gabarito","Gill Sans",Arial,sans-serif;font-weight:600;text-wrap:balance;letter-spacing:-.01em}
+  h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.08;margin:0}
+  h2{font-size:clamp(1.45rem,3.4vw,2rem);line-height:1.15;margin:0}
+  h3{font-size:1.02rem;line-height:1.3;margin:0;letter-spacing:0}
+  p{margin:0}
+  a{color:inherit}
+
+  .wrap{max-width:1060px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+
+  .eyebrow{
+    font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.13em;
+    color:var(--muted);margin:0;
+  }
+
+  /* ---- header ---- */
+  .site-header{
+    position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
+    background:var(--ground);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .header-in{display:flex;align-items:center;gap:16px;min-height:62px;flex-wrap:wrap;padding-block:10px}
+  .wordmark{display:flex;align-items:center;gap:10px;font-size:1.06rem;font-weight:700;letter-spacing:-.02em;text-decoration:none;margin-right:auto;color:var(--ink)}
+  .mark{width:26px;height:26px;flex:none;display:block;color:var(--accent)}
+  .header-phone{
+    font-variant-numeric:tabular-nums;font-size:.9rem;color:var(--muted);
+    text-decoration:none;white-space:nowrap;
+  }
+  .header-phone:hover{color:var(--ink)}
+
+  /* ---- buttons ---- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-family:"Karla",sans-serif;font-size:.94rem;font-weight:600;
+    padding:12px 20px;border-radius:999px;border:1px solid transparent;
+    text-decoration:none;cursor:pointer;white-space:nowrap;
+    transition:background-color .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn-primary{background:var(--accent);color:var(--on-accent)}
+  .btn-primary:hover{background:var(--accent-hover)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-sm{padding:9px 16px;font-size:.87rem}
+  :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:4px}
+
+  /* ---- hero ---- */
+  .hero{padding-block:clamp(44px,8vw,86px) clamp(32px,5vw,52px)}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,64px);align-items:center}
+  .hero-copy{display:flex;flex-direction:column;gap:22px;max-width:36ch}
+  .hero-sub{color:var(--ink-soft);font-size:clamp(1rem,1.6vw,1.13rem);max-width:46ch}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+  .hero-note{display:flex;align-items:center;gap:8px;font-size:.87rem;color:var(--muted)}
+  .hero-note .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+
+  .hero-art{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:200px 200px 24px 24px;overflow:hidden;background:var(--accent-tint)}
+  .hero-art svg{display:block;width:100%;height:100%}
+
+  /* ---- fact strip ---- */
+  .facts{border-block:1px solid var(--line-soft);background:var(--surface-2)}
+  .facts-in{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line-soft);margin:0}
+  .fact{background:var(--surface-2);padding:20px clamp(16px,3vw,26px);display:flex;flex-direction:column;gap:4px}
+  .fact dt{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}
+  .fact dd{margin:0;font-size:.95rem;font-variant-numeric:tabular-nums;color:var(--ink)}
+
+  /* ---- sections ---- */
+  section{scroll-margin-top:90px}
+  .section{padding-block:clamp(48px,7vw,80px)}
+  .section-head{display:flex;flex-direction:column;gap:10px;margin-bottom:clamp(26px,4vw,40px);max-width:52ch}
+
+  /* ---- services ---- */
+  .services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(24px,4vw,44px)}
+  .service{
+    display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline;
+    padding-block:20px;border-top:1px solid var(--line);
+  }
+  .service:nth-child(-n+3){border-top-color:var(--ink)}
+  .service p{grid-column:1/-1;font-size:.9rem;color:var(--muted);max-width:34ch}
+  .service .meta{
+    font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap;
+  }
+
+  /* ---- steps ---- */
+  .steps-band{background:var(--surface-2);border-block:1px solid var(--line-soft)}
+  .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,4vw,48px)}
+  .step{display:flex;flex-direction:column;gap:8px}
+  .step-num{
+    font-size:.78rem;font-weight:700;letter-spacing:.1em;color:var(--accent);
+    font-variant-numeric:tabular-nums;
+  }
+  .step p{font-size:.93rem;color:var(--muted);max-width:32ch}
+
+  /* ---- booking ---- */
+  .booking-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,60px);align-items:start}
+  .booking-aside{display:flex;flex-direction:column;gap:18px;max-width:38ch}
+  .booking-aside p{color:var(--ink-soft);font-size:.97rem}
+  .aside-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+  .aside-list li{display:flex;gap:10px;font-size:.9rem;color:var(--muted);align-items:flex-start}
+  .tick{width:17px;height:17px;flex:none;margin-top:3px;color:var(--accent)}
+
+  form.card{
+    background:var(--surface);border:1px solid var(--line);border-radius:18px;
+    padding:clamp(20px,3.4vw,32px);box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:18px;min-width:0;
+  }
+  .field{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  label,legend{font-size:.76rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+  .opt{text-transform:none;letter-spacing:0;font-weight:400}
+  input[type="text"],input[type="tel"],input[type="email"],input[type="date"],select,textarea{
+    font-family:inherit;font-size:.97rem;color:var(--ink);background:var(--surface-2);
+    border:1px solid var(--line);border-radius:10px;padding:11px 13px;width:100%;max-width:100%;
+    transition:border-color .16s ease, background-color .16s ease;
+  }
+  input:hover,select:hover,textarea:hover{border-color:var(--muted)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);background:var(--surface)}
+  textarea{resize:vertical;min-height:80px}
+  select{appearance:none}
+  .select-wrap{position:relative}
+  .select-wrap::after{
+    content:"";position:absolute;right:14px;top:50%;width:8px;height:8px;pointer-events:none;
+    border-right:1.6px solid var(--muted);border-bottom:1.6px solid var(--muted);
+    transform:translateY(-70%) rotate(45deg);
+  }
+  fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+  .chips{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{position:relative}
+  .chip input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+  .chip span{
+    display:block;padding:10px 16px;border:1px solid var(--line);border-radius:999px;
+    font-size:.9rem;color:var(--ink-soft);font-variant-numeric:tabular-nums;
+    transition:border-color .16s ease, background-color .16s ease, color .16s ease;
+  }
+  .chip input:hover + span{border-color:var(--muted)}
+  .chip input:checked + span{background:var(--accent-tint);border-color:var(--accent);color:var(--accent);font-weight:600}
+  .chip input:focus-visible + span{outline:2px solid var(--focus);outline-offset:3px}
+  .check{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--ink-soft);text-transform:none;letter-spacing:0;font-weight:400}
+  .check input{margin:4px 0 0;accent-color:var(--accent);width:16px;height:16px;flex:none}
+  .err{font-size:.8rem;color:var(--danger)}
+  input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--danger)}
+  .form-foot{display:flex;flex-direction:column;gap:10px}
+  .form-foot .fine{font-size:.79rem;color:var(--muted)}
+
+  .done{
+    background:var(--surface);border:1px solid var(--accent);border-radius:18px;
+    padding:clamp(22px,3.4vw,34px);box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:16px;min-width:0;
+  }
+  .done h3{font-size:1.3rem}
+  .done .lead{color:var(--ink-soft)}
+  .summary{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--line-soft)}
+  .summary li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line-soft);font-size:.92rem}
+  .summary .k{color:var(--muted);text-transform:uppercase;font-size:.7rem;letter-spacing:.1em;font-weight:600;padding-top:3px;white-space:nowrap}
+  .summary .v{text-align:right;font-variant-numeric:tabular-nums}
+
+  /* ---- footer ---- */
+  .site-footer{border-top:1px solid var(--line-soft);background:var(--surface-2);padding-block:clamp(34px,5vw,52px) 28px}
+  .foot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+  .foot-col{display:flex;flex-direction:column;gap:7px;font-size:.92rem;color:var(--muted);font-variant-numeric:tabular-nums}
+  .foot-col h4{margin:0 0 4px;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.13em;color:var(--ink);font-family:"Karla",sans-serif}
+  .foot-col a{text-decoration:none}
+  .foot-col a:hover{color:var(--accent)}
+  .colophon{margin-top:30px;padding-top:18px;border-top:1px solid var(--line-soft);font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-art{max-width:320px;aspect-ratio:1/1;border-radius:180px 180px 20px 20px}
+    .services{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .service:nth-child(-n+3){border-top-color:var(--line)}
+    .service:nth-child(-n+2){border-top-color:var(--ink)}
+    .steps{grid-template-columns:1fr}
+    .booking-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:560px){
+    .facts-in{grid-template-columns:1fr}
+    .services{grid-template-columns:1fr}
+    .service:nth-child(-n+2){border-top-color:var(--line)}
+    .service:first-child{border-top-color:var(--ink)}
+    .row{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .header-phone{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.001ms !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="wordmark" href="#top">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" fill="none">
+        <path d="M4 12c0-4.4 5.4-8 12-8s12 3.6 12 8c0 2.4-1.6 3.6-3.4 2.9-1.5-.6-2.4-2-4-2-1.4 0-2.2 1-3.2 1.7-.8.6-1.9.6-2.8 0-1-.7-1.8-1.7-3.2-1.7-1.6 0-2.5 1.4-4 2C5.6 15.6 4 14.4 4 12Z" fill="currentColor"/>
+        <path d="M7 19c2.6 4.2 5.6 6.3 9 6.3s6.4-2.1 9-6.3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      Sonrisa de Luffy
+    </a>
+    <a class="header-phone" href="tel:+56912345678">+56 9 1234 5678</a>
+    <a class="btn btn-primary btn-sm" href="#agendar">Agendar cita</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Clínica dental &middot; Providencia</p>
+        <h1>Cuidamos tu sonrisa con calma y con tiempo.</h1>
+        <p class="hero-sub">Reserva una evaluación de 30 minutos. Revisamos tu caso, te explicamos qué necesitas y te entregamos el presupuesto por escrito el mismo día.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#agendar">Agendar mi cita</a>
+          <a class="btn btn-ghost" href="https://wa.me/56912345678" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+        <p class="hero-note"><span class="dot"></span> Respondemos en menos de 2 horas hábiles</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="400" fill="var(--accent-tint)"/>
+          <circle cx="160" cy="150" r="100" fill="var(--surface)" opacity=".5"/>
+          <g transform="translate(160 152) scale(.68) translate(-160 -160)">
+            <path d="M80 148c0-30 36-54 80-54s80 24 80 54c0 16-11 24-23 19-10-4-16-13-27-13-9 0-15 7-21 11-6 4-12 4-18 0-6-4-12-11-21-11-11 0-17 9-27 13-12 5-23-3-23-19Z" fill="var(--accent)"/>
+            <path d="M100 200c17 28 37 42 60 42s43-14 60-42" stroke="var(--accent)" stroke-width="14" stroke-linecap="round"/>
+          </g>
+          <path d="M40 300h240" stroke="var(--accent)" stroke-width="2" opacity=".35"/>
+          <path d="M40 330h160" stroke="var(--accent)" stroke-width="2" opacity=".2"/>
+          <path d="M40 360h96" stroke="var(--accent)" stroke-width="2" opacity=".12"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="wrap">
+      <dl class="facts-in">
+        <div class="fact"><dt>Horario</dt><dd>Lun a Vie 9:00–19:00 &middot; Sáb 9:00–14:00</dd></div>
+        <div class="fact"><dt>Dirección</dt><dd>Av. Los Alerces 1420, oficina 302</dd></div>
+        <div class="fact"><dt>Urgencias</dt><dd>Atención el mismo día por dolor agudo</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section class="section wrap" id="servicios">
+    <div class="section-head">
+      <p class="eyebrow">Servicios</p>
+      <h2>Lo que resolvemos en consulta</h2>
+    </div>
+    <div class="services">
+      <article class="service">
+        <h3>Limpieza y prevención</h3><span class="meta">45 min</span>
+        <p>Destartraje ultrasónico, profilaxis, pulido y control de caries.</p>
+      </article>
+      <article class="service">
+        <h3>Restauraciones</h3><span class="meta">40–60 min</span>
+        <p>Obturaciones de resina compuesta del color de tu diente.</p>
+      </article>
+      <article class="service">
+        <h3>Endodoncia</h3><span class="meta">1–2 sesiones</span>
+        <p>Tratamiento de conducto con instrumentación rotatoria y anestesia.</p>
+      </article>
+      <article class="service">
+        <h3>Ortodoncia</h3><span class="meta">Control mensual</span>
+        <p>Brackets metálicos, estéticos y alineadores transparentes.</p>
+      </article>
+      <article class="service">
+        <h3>Estética dental</h3><span class="meta">2 sesiones</span>
+        <p>Blanqueamiento en consulta y carillas de porcelana.</p>
+      </article>
+      <article class="service">
+        <h3>Urgencias</h3><span class="meta">Mismo día</span>
+        <p>Dolor agudo, fractura, corona suelta o absceso.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="steps-band">
+    <section class="section wrap" id="como-funciona">
+      <div class="section-head">
+        <p class="eyebrow">Cómo agendar</p>
+        <h2>Tres pasos, sin llamadas de ida y vuelta</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">PASO 01</span>
+          <h3>Dejas tu solicitud</h3>
+          <p>Completas el formulario con el día y el bloque horario que te acomoda.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">PASO 02</span>
+          <h3>Confirmamos la hora</h3>
+          <p>Te escribimos por WhatsApp dentro de 2 horas hábiles con la hora exacta.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">PASO 03</span>
+          <h3>Vienes a la evaluación</h3>
+          <p>Examen clínico, radiografía si hace falta y presupuesto escrito antes de empezar.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="section wrap" id="agendar">
+    <div class="booking-grid">
+      <div class="booking-aside">
+        <p class="eyebrow">Agenda tu hora</p>
+        <h2>Reserva tu evaluación</h2>
+        <p>Déjanos tus datos y nosotros coordinamos el resto. La evaluación inicial dura 30 minutos y no tiene costo.</p>
+        <ul class="aside-list">
+          <li><svg class="tick" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5 8 14.5 16 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Evaluación inicial sin costo</li>
+          <li><svg class="tick" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5 8 14.5 16 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Presupuesto por escrito antes de cualquier tratamiento</li>
+          <li><svg class="tick" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5 8 14.5 16 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Convenio con Fonasa e isapres</li>
+          <li><svg class="tick" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5 8 14.5 16 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Puedes reagendar hasta 24 horas antes</li>
+        </ul>
+      </div>
+
+      <form class="card" id="booking-form" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="nombre">Nombre y apellido</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="María Fernández">
+            <span class="err" id="err-nombre"></span>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel" placeholder="+56 9 1234 5678">
+            <span class="err" id="err-telefono"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Correo <span class="opt">(opcional)</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="maria@correo.cl">
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="motivo">Motivo de la consulta</label>
+            <div class="select-wrap">
+              <select id="motivo" name="motivo">
+                <option value="Evaluación general">Evaluación general</option>
+                <option value="Limpieza y prevención">Limpieza y prevención</option>
+                <option value="Dolor o urgencia">Dolor o urgencia</option>
+                <option value="Ortodoncia">Ortodoncia</option>
+                <option value="Estética dental">Estética dental</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="fecha">Fecha preferida</label>
+            <input type="date" id="fecha" name="fecha">
+            <span class="err" id="err-fecha"></span>
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>Bloque horario</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="bloque" value="Mañana (9:00 a 13:00)" id="bloque-am" checked><span>Mañana 9:00–13:00</span></label>
+            <label class="chip"><input type="radio" name="bloque" value="Tarde (14:00 a 19:00)" id="bloque-pm"><span>Tarde 14:00–19:00</span></label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="mensaje">Cuéntanos brevemente <span class="opt">(opcional)</span></label>
+          <textarea id="mensaje" name="mensaje" rows="3" placeholder="Hace una semana me duele una muela al masticar."></textarea>
+        </div>
+
+        <label class="check" for="primera">
+          <input type="checkbox" id="primera" name="primera">
+          Es mi primera visita a la clínica
+        </label>
+
+        <div class="form-foot">
+          <button class="btn btn-primary" type="submit" id="submit-btn">Solicitar hora</button>
+          <p class="fine">Al enviar aceptas que te contactemos por teléfono o WhatsApp para confirmar la hora.</p>
+        </div>
+      </form>
+
+      <div class="done" id="done" hidden>
+        <h3>Solicitud recibida</h3>
+        <p class="lead">Gracias, <strong id="done-name">—</strong>. Te confirmaremos la hora por WhatsApp dentro de 2 horas hábiles.</p>
+        <ul class="summary" id="done-summary"></ul>
+        <div class="hero-actions">
+          <a class="btn btn-primary" id="wa-link" href="https://wa.me/56912345678" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+          <button class="btn btn-ghost" type="button" id="reset-btn">Enviar otra solicitud</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h4>Sonrisa de Luffy</h4>
+        <span>Av. Los Alerces 1420, oficina 302</span>
+        <span>Providencia, Santiago</span>
+      </div>
+      <div class="foot-col">
+        <h4>Contacto</h4>
+        <a href="tel:+56912345678">+56 9 1234 5678</a>
+        <a href="mailto:hola@sonrisadeluffy.cl">hola@sonrisadeluffy.cl</a>
+        <a href="https://wa.me/56912345678" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="foot-col">
+        <h4>Horario</h4>
+        <span>Lunes a viernes 9:00–19:00</span>
+        <span>Sábado 9:00–14:00</span>
+        <span>Domingo cerrado</span>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>&copy; <span id="year">2026</span> Sonrisa de Luffy</span>
+      <span>Atención odontológica general y especialidades</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var WHATSAPP = "56912345678";
+  var form = document.getElementById("booking-form");
+  var done = document.getElementById("done");
+  var yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  var fecha = document.getElementById("fecha");
+  var now = new Date();
+  var pad = function(n){ return (n < 10 ? "0" : "") + n; };
+  if (fecha) fecha.min = now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
+
+  function setError(id, msg){
+    var input = document.getElementById(id);
+    var slot = document.getElementById("err-" + id);
+    if (slot) slot.textContent = msg || "";
+    if (input) {
+      if (msg) input.setAttribute("aria-invalid", "true");
+      else input.removeAttribute("aria-invalid");
+    }
+    return !msg;
+  }
+
+  function formatDate(value){
+    if (!value) return "";
+    var p = value.split("-");
+    var d = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+    try {
+      return d.toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "long" });
+    } catch (e) {
+      return value;
+    }
+  }
+
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+
+    var nombre = document.getElementById("nombre").value.trim();
+    var telefono = document.getElementById("telefono").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var motivo = document.getElementById("motivo").value;
+    var fechaVal = fecha.value;
+    var bloque = form.querySelector("input[name=bloque]:checked").value;
+    var mensaje = document.getElementById("mensaje").value.trim();
+    var primera = document.getElementById("primera").checked;
+
+    var digits = telefono.replace(/[^0-9]/g, "");
+    var okNombre = setError("nombre", nombre.length < 2 ? "Escribe tu nombre para poder confirmarte la hora." : "");
+    var okTel = setError("telefono", digits.length < 8 ? "Necesitamos un teléfono de al menos 8 dígitos." : "");
+    var okFecha = setError("fecha", !fechaVal ? "Elige el día que prefieres." : "");
+
+    if (!okNombre || !okTel || !okFecha) {
+      var firstBad = form.querySelector("[aria-invalid=true]");
+      if (firstBad) firstBad.focus();
+      return;
+    }
+
+    var rows = [
+      ["Paciente", nombre],
+      ["Teléfono", telefono],
+      ["Motivo", motivo],
+      ["Fecha", formatDate(fechaVal)],
+      ["Horario", bloque]
+    ];
+    if (email) rows.push(["Correo", email]);
+    if (primera) rows.push(["Primera visita", "Sí"]);
+
+    var list = document.getElementById("done-summary");
+    list.textContent = "";
+    rows.forEach(function(r){
+      var li = document.createElement("li");
+      var k = document.createElement("span");
+      k.className = "k";
+      k.textContent = r[0];
+      var v = document.createElement("span");
+      v.className = "v";
+      v.textContent = r[1];
+      li.appendChild(k);
+      li.appendChild(v);
+      list.appendChild(li);
+    });
+
+    document.getElementById("done-name").textContent = nombre.split(" ")[0];
+
+    var lines = rows.map(function(r){ return r[0] + ": " + r[1]; }).join("\n");
+    var text = "Hola, quiero agendar una hora en Sonrisa de Luffy.\n" + lines +
+      (mensaje ? "\nComentario: " + mensaje : "");
+    document.getElementById("wa-link").href =
+      "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
+
+    form.hidden = true;
+    done.hidden = false;
+    done.setAttribute("tabindex", "-1");
+    done.focus();
+  });
+
+  document.getElementById("reset-btn").addEventListener("click", function(){
+    form.reset();
+    setError("nombre", "");
+    setError("telefono", "");
+    setError("fecha", "");
+    done.hidden = true;
+    form.hidden = false;
+    document.getElementById("nombre").focus();
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Sonrisa de Luffy",
+  "description": "Clínica dental en Providencia, Santiago. Evaluación inicial sin costo, presupuesto por escrito y urgencias el mismo día.",
+  "url": "https://sonrisadeluffy.cl/",
+  "telephone": "+56912345678",
+  "email": "hola@sonrisadeluffy.cl",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Los Alerces 1420, oficina 302",
+    "addressLocality": "Providencia",
+    "addressRegion": "Región Metropolitana",
+    "addressCountry": "CL"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00" }
+  ]
+}
+</script>
+
+</body>
+</html>
